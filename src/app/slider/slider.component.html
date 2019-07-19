@@ -1,0 +1,16 @@
+<h1>Dynamic Donut Chart</h1>
+<p>Use the slider to change the value of the donut chart.</p>
+<div class="container">
+  <div class="item">
+    <mat-slider
+    thumbLabel
+    [displayWith]="formatLabel"
+    tickInterval="10"
+    [min]="0"
+    [max]="100"
+    [(ngModel)]="value"></mat-slider>
+  </div>
+  <div class="item donut">
+    <app-donut-chart [value]="value"></app-donut-chart>
+  </div>
+</div>
