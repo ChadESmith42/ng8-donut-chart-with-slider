@@ -10,7 +10,17 @@
     [max]="100"
     [(ngModel)]="value"></mat-slider>
   </div>
+  <div class="item">
+    <mat-form-field>
+      <mat-label>Color Options</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let color of colors" [value]="color.value">
+          {{color.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
   <div class="item donut">
-    <app-donut-chart [value]="value"></app-donut-chart>
+    <app-donut-chart [value]="value" [colorValues]="colorValues"></app-donut-chart>
   </div>
 </div>
